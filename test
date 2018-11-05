@@ -1,0 +1,25 @@
+#include"headers.h"
+
+void even(void)
+{
+	for(int i=2 ; i<100 ; i+=2)
+		printf("%d ",i)
+}
+
+void odd(void)
+{
+	for(int i=1 ; i<100 ; i+=2)
+		printf("%d ",i);
+}
+
+
+int main(int argc , char **argv , char **envp)
+{
+	int thread_id1,thread_id2;
+	pthread_creat(thread_id1,NULL,even,NULL);
+	pthread_creat(thread_id2,NULL,odd,NULL);
+	pthread_exit(NULL);
+
+
+	return 0;
+}
